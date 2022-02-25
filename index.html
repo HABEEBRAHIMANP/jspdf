@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jspdf/html2canvas</title>
+</head>
+<body>
+    <div id="html-template">
+        <div style="margin-top: 50px;margin-left: 50px;">
+            <div style="min-width: 600px">
+                <header>
+                    <div class="row">
+                        <div class="col">
+                            <a target="_blank" href="https://etemkeskin.com">
+                    	     <img style="max-width: 70px;" src='data:image/png;base64,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'/>
+                             <span style="font-size: 26px;"> www.etemkeskin.com</span>               
+                           </a>
+                        </div> <br>
+                        <div class="col company-details">
+                            <div>455 Foggy Heights, AZ 85004, US</div>
+                            <div>(123) 456-789</div>
+                            <div>etemkeskin@example.com</div>
+                        </div>
+                    </div>
+                </header>
+                <main>
+                    <div>
+                        <div>
+                            <div>INVOICE TO:</div>
+                            <h2>John Doe</h2>
+                            <div>796 Silver Harbour, TX 79273, US</div>
+                            <div><a href="mailto:john@example.com">john@example.com</a></div>
+                        </div>
+                        <div class="col invoice-details">
+                            <h1  style="color: darkcyan;">INVOICE 3-2-1</h1>
+                            <div >Date of Invoice: 01/10/2018</div>
+                            <div >Due Date: 30/10/2018</div>
+                        </div>
+                    </div>
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="text-left">DESCRIPTION</th>
+                                <th class="text-right">HOUR PRICE</th>
+                                <th class="text-right">HOURS</th>
+                                <th class="text-right">TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="no">01</td>
+                                <td class="text-left"><h3>Website Design</h3>Creating a recognizable design solution based on the company's existing visual identity</td>
+                                <td class="unit">$40.00</td>
+                                <td class="qty">30</td>
+                                <td class="total">$1,200.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td colspan="2">SUBTOTAL</td>
+                                <td>$1,200.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td colspan="2">TAX 25%</td>
+                                <td>$300.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td colspan="2">GRAND TOTAL</td>
+                                <td>$1,500.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </main>
+                <footer>
+                    Invoice was created on a computer and is valid without the signature and seal.
+                </footer>
+            </div>
+        </div>
+	</div>
+    
+    <br><br>
+    <button type="button" onclick="convertHTMLToPDF()"
+    style="margin-left: 350px;padding: 7px; color: white; background-color: darkslategrey;">PDF olarak Kaydet</button>
+</body>
+<script type="text/javascript" src="js.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  
+
+</html>
